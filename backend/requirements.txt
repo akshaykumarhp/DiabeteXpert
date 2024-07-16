@@ -1,7 +1,0 @@
-Flask
-Flask-JWT-Extended
-joblib
-numpy
-pandas
-scikit-learn
-python-dotenv
