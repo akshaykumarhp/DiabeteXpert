@@ -7,12 +7,16 @@ const router = expresss.Router();
 
 // Mock data for users
 const users = {
-    user1: bcrypt.hashSync('password1',8),
-    user2: bcrypt.hashSync('password2',8),
+    user1: bcrypt.hashSync('strongSecurePassword1!',8),
+    user2: bcrypt.hashSync('anotherSecurePassword2@',8),
 };
+
+console.log('Users:', users);
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
+
+    console.log('Login attempt:', {username, password});
 
     if (!users[username] || !bcrypt.compareSync(password, users[username])) {
         return res.status(401).send({message: 'Invalid username or password'});
