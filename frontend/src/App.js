@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     const features = Object.values(formData).map(Number);
     try {
-        const response = await axios.post('http://localhost:5000/predict', { features }, {
+        const response = await axios.post('http://localhost:5002/predict', { features }, {
             headers: { Authorization: `Bearer ${token}` }
         });
         setResult(response.data);
